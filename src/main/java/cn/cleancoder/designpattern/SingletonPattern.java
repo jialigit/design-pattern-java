@@ -6,6 +6,17 @@ package cn.cleancoder.designpattern;
  * 
  * One of a kind of Objects for which there is only one instance
  * 
+ * 
+ * How to ensure the thread safe:
+ * 	1. eagerly mode depend on the JVM to create the instance before a thread to access it
+ *  2. use locking with volative keyword
+ *  
+ *  **about the volatile keyword***
+ *  Short of reading the memory model specification,
+ *  I recommend you read 
+ *  http://jeremymanson.blogspot.com/2008/11/what-volatile-means-in-java.html. 
+ * 
+ * **happen before model specification***
  * @author ice
  *
  */
@@ -70,6 +81,8 @@ class EagerlySingleton {
 /**
  * Performance considered
  * 
+ * key word volatile is used to ensure that 
+ * in multi-thread environment
  * @author ice
  *
  */
